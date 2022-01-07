@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mrvndlnsgrr/static/css/main.3887d992.chunk.css",
-    "main.js": "/mrvndlnsgrr/static/js/main.e24303fc.chunk.js",
-    "main.js.map": "/mrvndlnsgrr/static/js/main.e24303fc.chunk.js.map",
+    "main.js": "/mrvndlnsgrr/static/js/main.e390327d.chunk.js",
+    "main.js.map": "/mrvndlnsgrr/static/js/main.e390327d.chunk.js.map",
     "runtime-main.js": "/mrvndlnsgrr/static/js/runtime-main.320b93f4.js",
     "runtime-main.js.map": "/mrvndlnsgrr/static/js/runtime-main.320b93f4.js.map",
     "static/js/2.6c0a77d6.chunk.js": "/mrvndlnsgrr/static/js/2.6c0a77d6.chunk.js",
@@ -13,12 +13,12 @@
     "static/media/about-img.eac807eb.jpg": "/mrvndlnsgrr/static/media/about-img.eac807eb.jpg",
     "static/media/me.202f550d.png": "/mrvndlnsgrr/static/media/me.202f550d.png",
     "static/media/project-img.b4e47883.jpg": "/mrvndlnsgrr/static/media/project-img.b4e47883.jpg",
-    "static/media/vienet.f3125254.png": "/mrvndlnsgrr/static/media/vienet.f3125254.png"
+    "static/media/vienet.74706be2.png": "/mrvndlnsgrr/static/media/vienet.74706be2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.320b93f4.js",
     "static/js/2.6c0a77d6.chunk.js",
     "static/css/main.3887d992.chunk.css",
-    "static/js/main.e24303fc.chunk.js"
+    "static/js/main.e390327d.chunk.js"
   ]
 }
