@@ -42,17 +42,17 @@ export const portfolioData = {
       ],
 
       images: [
-        "/images/projects/jzprime/dashboard.png",
-        "/images/projects/jzprime/lots.png",
-        "/images/projects/jzprime/quotations.png",
-        "/images/projects/jzprime/create-quotation.png",
-        "/images/projects/jzprime/sales.png",
-        "/images/projects/jzprime/view-sale.png",
-        "/images/projects/jzprime/collections-monitoring.png",
-        "/images/projects/jzprime/collections-dashboard.png",
-        "/images/projects/jzprime/payments.png",
-        "/images/projects/jzprime/record-payment.png",
-        "/images/projects/jzprime/sales-report.png",
+        "images/projects/jzprime/dashboard.png",
+        "images/projects/jzprime/lots.png",
+        "images/projects/jzprime/quotations.png",
+        "images/projects/jzprime/create-quotation.png",
+        "images/projects/jzprime/sales.png",
+        "images/projects/jzprime/view-sale.png",
+        "images/projects/jzprime/collections-monitoring.png",
+        "images/projects/jzprime/collections-dashboard.png",
+        "images/projects/jzprime/payments.png",
+        "images/projects/jzprime/record-payment.png",
+        "images/projects/jzprime/sales-report.png",
       ],
 
       links: {
