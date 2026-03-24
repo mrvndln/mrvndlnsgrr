@@ -770,6 +770,26 @@ button {
   color: var(--muted);
 }
 
+.project-carousel {
+  position: relative;
+}
+
+.project-carousel-image-wrap {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.project-preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
 .project-highlights-block {
   margin-top: 0.75rem;
   margin-bottom: 10px;
@@ -819,7 +839,7 @@ button {
 }
 
 .project-see-more {
-  margin: 15px 0;
+  margin-top: 10px;
   padding: 0;
   border: none;
   background: transparent;

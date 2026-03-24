@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 function AnimatedHighlights({ project, expanded, onToggle }) {
   const visibleHighlights = expanded
@@ -35,6 +35,8 @@ export default function Projects({ data }) {
   const [activeModal, setActiveModal] = useState(null);
   const [activeIndexes, setActiveIndexes] = useState({});
   const [expandedHighlights, setExpandedHighlights] = useState({});
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [isModalHovered, setIsModalHovered] = useState(false);
 
   const projectKey = (project) => project.id || project.title;
 
@@ -61,6 +63,37 @@ export default function Projects({ data }) {
       [key]: !prev[key],
     }));
   };
+
+  useEffect(() => {
+    const intervals = [];
+
+    data.projects.forEach((project) => {
+      const images = getImages(project);
+
+      if (images.length > 1) {
+        const interval = setInterval(() => {
+          setActiveIndexes((prev) => {
+            const key = projectKey(project);
+
+            if (hoveredProject === key) return prev;
+
+            const current = prev[key] ?? 0;
+
+            return {
+              ...prev,
+              [key]: (current + 1) % images.length,
+            };
+          });
+        }, 3000);
+
+        intervals.push(interval);
+      }
+    });
+
+    return () => {
+      intervals.forEach((interval) => clearInterval(interval));
+    };
+  }, [data.projects, hoveredProject]);
 
   const handlePrev = (project) => {
     const images = getImages(project);
@@ -91,18 +124,46 @@ export default function Projects({ data }) {
   };
 
   const openModal = (project, index = 0) => {
+    setIsModalHovered(false);
     setActiveModal({
       project,
       index,
     });
   };
 
-  const closeModal = () => setActiveModal(null);
+  const closeModal = () => {
+    setIsModalHovered(false);
+    setActiveModal(null);
+  };
 
   const modalImages = useMemo(() => {
     if (!activeModal?.project) return [];
     return getImages(activeModal.project);
   }, [activeModal]);
+
+  useEffect(() => {
+    if (!activeModal?.project) return;
+    if (modalImages.length <= 1) return;
+    if (isModalHovered) return;
+
+    const interval = setInterval(() => {
+      setActiveModal((prev) => {
+        if (!prev?.project) return prev;
+
+        return {
+          ...prev,
+          index: (prev.index + 1) % modalImages.length,
+        };
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [
+    activeModal?.project?.id,
+    activeModal?.project?.title,
+    modalImages.length,
+    isModalHovered,
+  ]);
 
   const modalPrev = () => {
     if (!activeModal || !modalImages.length) return;
@@ -261,7 +322,13 @@ export default function Projects({ data }) {
                 </div>
               </div>
 
-              <div className="featured-project-preview">
+              <div
+                className="featured-project-preview"
+                onMouseEnter={() =>
+                  setHoveredProject(projectKey(featuredProject))
+                }
+                onMouseLeave={() => setHoveredProject(null)}
+              >
                 {renderPreview(featuredProject, true)}
               </div>
             </div>
@@ -273,7 +340,11 @@ export default function Projects({ data }) {
                 className="project-card upgraded"
                 key={project.id || project.title}
               >
-                <div className="project-card-media">
+                <div
+                  className="project-card-media"
+                  onMouseEnter={() => setHoveredProject(projectKey(project))}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
                   {renderPreview(project, false)}
                 </div>
 
@@ -359,7 +430,11 @@ export default function Projects({ data }) {
               </p>
             </div>
 
-            <div className="project-modal-body">
+            <div
+              className="project-modal-body"
+              onMouseEnter={() => setIsModalHovered(true)}
+              onMouseLeave={() => setIsModalHovered(false)}
+            >
               {modalImages.length > 1 && (
                 <button
                   type="button"
