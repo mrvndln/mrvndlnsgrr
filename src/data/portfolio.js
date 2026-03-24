@@ -72,12 +72,11 @@ export const portfolioData = {
       tech: ["C#", "ASP.NET", "Blazor", "PostgreSQL", "Hardware Integration"],
 
       highlights: [
-        "Sales transaction processing with real-time updates",
-        "Inventory tracking and stock management",
-        "Cash drawer integration for automated opening during transactions",
-        "Receipt printer integration for instant invoice printing",
-        "PostgreSQL-based data handling for scalability and performance",
-        "Modular system architecture for maintainability",
+        "Processes sales transactions with real-time updates",
+        "Tracks inventory and manages stock efficiently",
+        "Integrates with cash drawers for automatic opening after transactions",
+        "Supports receipt printer integration for instant invoice printing",
+        "Includes reporting modules for sales and inventory analytics",
       ],
 
       images: [],
@@ -94,14 +93,19 @@ export const portfolioData = {
       id: "emedcore",
       title: "Emedcore+ (OpenEMR)",
       description:
-        "Electronic medical records system with patient management, scheduling, billing, and reporting features.",
+        "A comprehensive healthcare management system built on OpenEMR, designed to streamline electronic medical records, patient management, and clinical workflows.",
 
       tech: ["PHP", "jQuery", "Bootstrap", "MySQL"],
 
       highlights: [
-        "Patient record management",
-        "Scheduling and billing",
-        "Medical reporting system",
+        "Electronic Medical Records (EMR) - Manage and store patient medical histories digitally",
+        "Practice Management - Handle day-to-day clinic operations efficiently",
+        "Patient Demographics - Maintain detailed patient information and profiles",
+        "Appointment Scheduling - Organize and manage patient appointments",
+        "Prescription Management - Create and track patient prescriptions",
+        "Patient Portal - Allow patients to access records and communicate with providers",
+        "Reporting - Generate medical, operational, and financial reports",
+        "Billing Management - Manage invoices, payments, and insurance processing"
       ],
 
       images: [],
@@ -116,17 +120,19 @@ export const portfolioData = {
 
     {
       id: "flexshift",
-      title: "MHSI Flexshift",
+      title: "MHSI Flexshift (HRIS for Healthcare)",
       description:
-        "HRIS system for healthcare operations with scheduling, attendance tracking, recruitment workflows, and reporting.",
+        "A healthcare-focused HRIS designed to streamline workforce management, scheduling, and operational processes for medical institutions.",
 
       tech: ["Laravel", "Vue.js", "MySQL", "AWS EC2, S3 & RDS"],
 
       highlights: [
-        "Shift scheduling system",
-        "Time and attendance tracking",
-        "Recruitment workflow",
-        "Reports and analytics",
+        "Shift Scheduling - Plan and manage staff shifts efficiently",
+        "Time and Attendance Tracking - Monitor employee attendance in real time",
+        "Recruitment Management - Handle hiring processes from application to onboarding",
+        "Supplies Management - Track and manage inventory and medical supplies",
+        "Booking Management - Manage staff or facility bookings and allocations",
+        "Reporting - Generate HR and operational reports for better decision-making"
       ],
 
       images: [],
@@ -143,40 +149,75 @@ export const portfolioData = {
       id: "robinson-q-assist",
       title: "Robinson Q-Assist",
       description:
-        "A queue management dashboard designed to optimize service operations through real-time queue tracking, counter management, and performance monitoring.",
+        "An admin dashboard for managing queue operations, counter services, and agents, with API integration for desktop and tablet-based queueing systems.",
 
       tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "MySQL"],
 
       highlights: [
-        "Queue flow and counter management",
-        "Real-time queue monitoring dashboard",
-        "Admin panel for service operations",
-        "Improved service efficiency and waiting time tracking",
+        "Queue Management - Monitor and control customer queues in real time",
+        "Counter Services Management - Manage service types and counter assignments",
+        "Counter Agents Management - Handle agent profiles, roles, and availability",
+        "Admin Dashboard - Centralized control panel for operations and monitoring",
+        "API Integration - Provide endpoints for agent desktop app and tablet devices",
+        "Real-Time Updates - Sync queue status across all connected devices",
       ],
 
       images: [],
 
       links: {
         demo: null,
-        repo: "https://bitbucket.org/mrvndlnsgrr/robinson-q-assist/src/main/",
+        repo: null,
       },
 
       featured: false,
     },
 
     {
-      id: "hris",
-      title: "HRIS / HR Management Modules",
+      id: "hrims",
+      title: "CIS - HRIMS",
       description:
-        "Developed HR-related modules including disciplinary history, calendar, employee management, payroll workflows, and internal business processes.",
+        "A Human Resource Information Management System designed to streamline employee lifecycle, payroll, and HR operations.",
 
       tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
 
       highlights: [
-        "Employee management",
-        "Payroll workflows",
-        "Disciplinary tracking",
-        "Calendar and scheduling",
+        "Employee Records Management - Maintain and organize employee information",
+        "Payroll Management - Process salaries, deductions, and payouts",
+        "Benefits Administration - Manage employee benefits and entitlements",
+        "Time and Attendance - Track employee attendance and working hours",
+        "Performance Management - Monitor and evaluate employee performance",
+        "Recruitment Management - Handle hiring and onboarding processes",
+        "Training and Development - Manage employee learning and growth programs",
+        "Disciplinary Tracking - Record and manage employee disciplinary actions",
+        "Calendar and Scheduling - Organize events, schedules, and HR activities",
+        "Announcements - Publish company-wide updates and notices",
+        "Memos Management - Create and distribute internal communications"
+      ],
+
+      images: [],
+
+      links: {
+        demo: null,
+        repo: null,
+      },
+
+      featured: false,
+    },
+
+    {
+      id: "ticketing",
+      title: "CIS - Ticketing",
+      description:
+        "A system for managing and tracking support requests and issue resolution efficiently.",
+
+      tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
+
+      highlights: [
+        "Ticket Management - Create, assign, and track support tickets",
+        "Issue Tracking - Monitor issue status and resolution progress",
+        "Priority Management - Categorize and prioritize requests",
+        "User Communication - Enable updates and responses within tickets",
+        "Reporting - Generate insights on support performance and trends"
       ],
 
       images: [],
@@ -198,33 +239,42 @@ export const portfolioData = {
       tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
 
       highlights: [
-        "Real-time delivery workflow",
-        "Customer and rider modules",
-        "Same-day logistics system",
+        "Order Management - Designed delivery transaction flows for request creation, fulfillment, and status lifecycle tracking",
+        "Dispatch Engine - Implemented proximity-based driver matching using configurable radius logic and availability checks",
+        "Geolocation-Based Auto Assignment - Automated driver allocation through location-aware dispatch rules",
+        "Real-Time Delivery Monitoring - Synchronized order progress and delivery updates across web and mobile platforms",
+        "Service Workflow Support - Handled multiple delivery categories including parcels, documents, food, and general goods",
+        "Access Control - Structured role-based access for admin, customer, and driver accounts",
+        "API Integration Layer - Exposed backend services for customer and driver mobile app consumption",
       ],
 
       images: [],
 
       links: {
         demo: null,
-        repo: "https://bitbucket.org/mrvndlnsgrr/blue-panther/src/main/",
+        repo: null,
       },
 
       featured: false,
     },
 
     {
-      id: "crm-sales",
-      title: "CRM & Sales Management",
+      id: "csm",
+      title: "CIS - CSM: Customer Relationship Management (CRM)",
       description:
-        "CRM system for managing leads, opportunities, quotations, and sales pipeline with reporting and email integration.",
+        "caters sales process includes the following: Lead Management, Opportunity Management, Sales and Pipeline Visualization, Quotation, Sales Quotes Management, Rate Calculator, Service Request with Email Integration.",
 
       tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
 
       highlights: [
-        "Lead and opportunity tracking",
-        "Sales pipeline visualization",
-        "Quotation and reporting system",
+        "Lead Management - Capture and track potential clients from inquiry to conversion",
+        "Opportunity Management - Monitor deals, stages, and closing potential",
+        "Sales Pipeline Visualization - View and analyze the sales funnel in real time",
+        "Quotation Management - Create and manage quotations with structured pricing",
+        "Sales Quotes Management - Generate professional quotes with detailed breakdowns",
+        "Rate Calculator - Automatically compute pricing based on defined rates",
+        "Service Request Management - Track and resolve customer service requests efficiently",
+        "Email Integration - Send and manage communications within the system",
       ],
 
       images: [],
@@ -241,15 +291,18 @@ export const portfolioData = {
       id: "croptor",
       title: "Croptor",
       description:
-        "A business or operations-focused web application designed to manage workflows, data tracking, and reporting processes with a scalable backend architecture.",
+        "A hybrid e-learning platform designed to support farmers and learners by providing accessible, practical, and guided agricultural knowledge through interactive and multimedia-based learning. business or operations-focused web application designed to manage workflows, data tracking, and reporting processes with a scalable backend architecture.",
 
       tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
 
       highlights: [
-        "Business workflow management",
-        "Data tracking and reporting",
-        "Custom module-based system design",
-        "Scalable backend structure",
+        "Interactive E-Learning Modules - Provide structured lessons on modern farming techniques and best practices",
+        "Crop Management Guide - Offer step-by-step guidance for planting, growing, and harvesting crops",
+        "Disease and Pest Identification - Help farmers detect and manage common crop issues",
+        "Hybrid Learning Setup - Combine online learning with field-based activities",
+        "Multimedia Learning Content - Use videos, images, and tutorials for better understanding",
+        "Localized Content Support - Deliver agriculture knowledge tailored to local crops and conditions",
+        "Progress Tracking - Monitor learner progress and performance over time"
       ],
 
       images: [],

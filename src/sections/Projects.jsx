@@ -1,11 +1,40 @@
 import React, { useMemo, useState } from "react";
 
+function AnimatedHighlights({ project, expanded, onToggle }) {
+  const visibleHighlights = expanded
+    ? project.highlights
+    : project.highlights.slice(0, 3);
+
+  return (
+    <div className="project-highlights-block">
+      <ul
+        className={`project-highlights compact ${
+          expanded ? "expanded" : "collapsed"
+        }`}
+      >
+        {visibleHighlights.map((highlight, index) => (
+          <li key={`${project.id || project.title}-highlight-${index}`}>
+            {highlight}
+          </li>
+        ))}
+      </ul>
+
+      {project.highlights?.length > 3 && (
+        <button type="button" className="project-see-more" onClick={onToggle}>
+          {expanded ? "See Less" : "See More"}
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function Projects({ data }) {
   const featuredProject = data.projects.find((project) => project.featured);
   const otherProjects = data.projects.filter((project) => !project.featured);
 
   const [activeModal, setActiveModal] = useState(null);
   const [activeIndexes, setActiveIndexes] = useState({});
+  const [expandedHighlights, setExpandedHighlights] = useState({});
 
   const projectKey = (project) => project.id || project.title;
 
@@ -17,6 +46,20 @@ export default function Projects({ data }) {
   const getImages = (project) => {
     if (project.images?.length) return project.images;
     return [];
+  };
+
+  const isExpanded = (project) => {
+    const key = projectKey(project);
+    return expandedHighlights[key] ?? false;
+  };
+
+  const toggleHighlights = (project) => {
+    const key = projectKey(project);
+
+    setExpandedHighlights((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
   };
 
   const handlePrev = (project) => {
@@ -167,7 +210,9 @@ export default function Projects({ data }) {
                 <p className="project-description">
                   {featuredProject.description}
                 </p>
+
                 <span className="project-badge">Key System Features</span>
+
                 {featuredProject.highlights?.length > 0 && (
                   <ul className="project-highlights">
                     {featuredProject.highlights.map((highlight, index) => (
@@ -224,7 +269,10 @@ export default function Projects({ data }) {
 
           <div className="projects-grid upgraded">
             {otherProjects.map((project) => (
-              <article className="project-card upgraded" key={project.id}>
+              <article
+                className="project-card upgraded"
+                key={project.id || project.title}
+              >
                 <div className="project-card-media">
                   {renderPreview(project, false)}
                 </div>
@@ -232,22 +280,17 @@ export default function Projects({ data }) {
                 <div className="project-card-body">
                   <div className="project-card-top">
                     <h3>{project.title}</h3>
-                    {project.featured && (
-                      <span className="project-badge small">Featured</span>
-                    )}
                   </div>
 
                   <p className="project-description">{project.description}</p>
                   <span className="project-badge">Key System Features</span>
 
                   {project.highlights?.length > 0 && (
-                    <ul className="project-highlights compact">
-                      {project.highlights
-                        .slice(0, 3)
-                        .map((highlight, index) => (
-                          <li key={index}>{highlight}</li>
-                        ))}
-                    </ul>
+                    <AnimatedHighlights
+                      project={project}
+                      expanded={isExpanded(project)}
+                      onToggle={() => toggleHighlights(project)}
+                    />
                   )}
 
                   <div className="project-tech">

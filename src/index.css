@@ -770,6 +770,82 @@ button {
   color: var(--muted);
 }
 
+.project-highlights-block {
+  margin-top: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.project-highlights.compact {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.project-highlights.compact li {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: highlightReveal 0.28s ease forwards;
+}
+
+.project-highlights.compact li:nth-child(1) {
+  animation-delay: 0.02s;
+}
+
+.project-highlights.compact li:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.project-highlights.compact li:nth-child(3) {
+  animation-delay: 0.08s;
+}
+
+.project-highlights.compact li:nth-child(4) {
+  animation-delay: 0.11s;
+}
+
+.project-highlights.compact li:nth-child(5) {
+  animation-delay: 0.14s;
+}
+
+.project-highlights.compact li:nth-child(6) {
+  animation-delay: 0.17s;
+}
+
+.project-highlights.compact li:nth-child(7) {
+  animation-delay: 0.2s;
+}
+
+.project-highlights.compact li:nth-child(8) {
+  animation-delay: 0.23s;
+}
+
+.project-see-more {
+  margin: 15px 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-see-more:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+.project-see-more:active {
+  transform: translateY(1px);
+}
+
+@keyframes highlightReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* =========================
    PROJECT CAROUSEL
 ========================= */
