@@ -320,11 +320,14 @@ export const portfolioData = {
     "Livewire",
     "Repository Pattern",
     "PHP",
+    "C#",
+    "ASP.NET",
     "JavaScript",
     "Alpine.js",
     "jQuery",
     "Vue.Js",
     "ReactJS",
+    "Blazor",
     "Tailwind CSS",
     "Bootstrap",
     "MySQL",
@@ -340,5 +343,6 @@ export const portfolioData = {
     "Postman",
     "RESTful API development",
     "API integration",
+    "Hardware Integration"
   ],
 };
