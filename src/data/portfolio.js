@@ -7,7 +7,7 @@ export const portfolioData = {
     "I’m a full-stack developer with experience building business systems such as HRIS, CRM, real estate platforms, inventory tools, and custom web applications. I focus on developing practical, scalable, and maintainable solutions that solve real-world business needs.",
   contact: {
     email: "mrvndlnsgrr@gmail.com",
-    mobile: "+63 9450000000",
+    mobile: "+63 9451244990",
     github: "https://github.com/mrvndln",
     bitbucket: "https://bitbucket.org/mrvndlnsgrr",
     location: "Philippines",
