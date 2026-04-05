@@ -1,10 +1,10 @@
 export const portfolioData = {
   name: "Marvin Esguerra",
-  roles: ["Software Engineer", "Fullstack Developer"],
+  roles: ["Full-Stack Developer", "Software Engineer"],
   intro:
-    "I’m a full-stack software engineer based in the Philippines, specializing in building scalable web applications using modern frontend and backend technologies. I focus on creating clean, maintainable systems that solve real-world business problems.",
+    "Building scalable, production-ready systems that power real business operations — from backend architecture to deployment.",
   about:
-    "I’m a full-stack developer with experience building business systems such as HRIS, CRM, real estate platforms, inventory tools, and custom web applications. I focus on developing practical, scalable, and maintainable solutions that solve real-world business needs.",
+    "I’m a full-stack developer with over 6 years of experience building end-to-end business systems such as HRIS, CRM, real estate platforms, inventory tools, and custom web applications. I specialize in developing scalable and maintainable solutions that support real-world operations — including complex workflows like payment processing, collections, and system automation.",
   contact: {
     email: "mrvndlnsgrr@gmail.com",
     mobile: "+63 9451244990",
@@ -264,7 +264,7 @@ export const portfolioData = {
 
       featured: false,
     },
-    
+
     {
       id: "blue-panther",
       title: "Blue Panther",
