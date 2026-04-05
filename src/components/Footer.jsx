@@ -1,24 +1,51 @@
 import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 
 export default function Footer({ name }) {
   const [visits, setVisits] = useState(null);
   const [displayed, setDisplayed] = useState(0);
 
   useEffect(() => {
-    const counted = sessionStorage.getItem("portfolio_visit_counted");
+    const runCounter = async () => {
+      try {
+        const counted = sessionStorage.getItem("portfolio_visit_counted");
 
-    // TEMP: disable broken external counter for now
-    if (!counted) {
-      sessionStorage.setItem("portfolio_visit_counted", "true");
-    }
+        if (!counted) {
+          const { data, error } = await supabase.rpc(
+            "increment_portfolio_visits"
+          );
 
-    // fallback sample value so UI still works
-    const fallbackValue = 128;
-    setVisits(fallbackValue);
+          if (error) throw error;
+
+          setVisits(Number(data ?? 0));
+          sessionStorage.setItem("portfolio_visit_counted", "true");
+          return;
+        }
+
+        const { data, error } = await supabase
+          .from("site_metrics")
+          .select("count")
+          .eq("key", "portfolio_visits")
+          .single();
+
+        if (error) throw error;
+
+        setVisits(Number(data?.count ?? 0));
+      } catch (error) {
+        console.error("Visitor counter error:", error);
+        setVisits(null);
+      }
+    };
+
+    runCounter();
   }, []);
 
   useEffect(() => {
     if (visits === null) return;
+    if (visits === 0) {
+      setDisplayed(0);
+      return;
+    }
 
     let start = 0;
     const duration = 1200;
