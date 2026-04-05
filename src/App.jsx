@@ -9,6 +9,7 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
 import { portfolioData } from "./data/portfolio";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,6 +62,7 @@ export default function App() {
       </main>
 
       <Footer name={portfolioData.name} />
+      <ScrollToTop />
     </div>
   );
 }
