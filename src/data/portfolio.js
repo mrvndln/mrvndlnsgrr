@@ -235,34 +235,6 @@ export const portfolioData = {
     },
 
     {
-      id: "blue-panther",
-      title: "Blue Panther",
-      description:
-        "On-demand delivery web application connecting customers and riders for real-time and same-day delivery services.",
-
-      tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
-
-      highlights: [
-        "Order Management - Designed delivery transaction flows for request creation, fulfillment, and status lifecycle tracking",
-        "Dispatch Engine - Implemented proximity-based driver matching using configurable radius logic and availability checks",
-        "Geolocation-Based Auto Assignment - Automated driver allocation through location-aware dispatch rules",
-        "Real-Time Delivery Monitoring - Synchronized order progress and delivery updates across web and mobile platforms",
-        "Service Workflow Support - Handled multiple delivery categories including parcels, documents, food, and general goods",
-        "Access Control - Structured role-based access for admin, customer, and driver accounts",
-        "API Integration Layer - Exposed backend services for customer and driver mobile app consumption",
-      ],
-
-      images: [],
-
-      links: {
-        demo: null,
-        repo: null,
-      },
-
-      featured: false,
-    },
-
-    {
       id: "csm",
       title: "CIS - CSM: Customer Relationship Management (CRM)",
       description:
@@ -292,6 +264,35 @@ export const portfolioData = {
 
       featured: false,
     },
+    
+    {
+      id: "blue-panther",
+      title: "Blue Panther",
+      description:
+        "On-demand delivery web application connecting customers and riders for real-time and same-day delivery services.",
+
+      tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind Css", "MySQL"],
+
+      highlights: [
+        "Order Management - Designed delivery transaction flows for request creation, fulfillment, and status lifecycle tracking",
+        "Dispatch Engine - Implemented proximity-based driver matching using configurable radius logic and availability checks",
+        "Geolocation-Based Auto Assignment - Automated driver allocation through location-aware dispatch rules",
+        "Real-Time Delivery Monitoring - Synchronized order progress and delivery updates across web and mobile platforms",
+        "Service Workflow Support - Handled multiple delivery categories including parcels, documents, food, and general goods",
+        "Access Control - Structured role-based access for admin, customer, and driver accounts",
+        "API Integration Layer - Exposed backend services for customer and driver mobile app consumption",
+      ],
+
+      images: [],
+
+      links: {
+        demo: null,
+        repo: null,
+      },
+
+      featured: false,
+    },
+
 
     {
       id: "croptor",
