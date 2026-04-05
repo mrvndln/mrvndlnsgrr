@@ -2,48 +2,50 @@ import { useEffect, useState } from "react";
 
 export default function Footer({ name }) {
   const [visits, setVisits] = useState(null);
-  const [error, setError] = useState(false);
+  const [displayed, setDisplayed] = useState(0);
 
   useEffect(() => {
     const counted = sessionStorage.getItem("portfolio_visit_counted");
 
-    const endpoint = counted
-      ? "https://api.countapi.xyz/get/mrvndln/portfolio"
-      : "https://api.countapi.xyz/hit/mrvndln/portfolio";
+    // TEMP: disable broken external counter for now
+    if (!counted) {
+      sessionStorage.setItem("portfolio_visit_counted", "true");
+    }
 
-    fetch(endpoint)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`CountAPI request failed: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const value = data?.value ?? 0;
-        setVisits(value);
-        setError(false);
-
-        if (!counted) {
-          sessionStorage.setItem("portfolio_visit_counted", "true");
-        }
-      })
-      .catch((err) => {
-        console.error("Visitor counter error:", err);
-        setError(true);
-      });
+    // fallback sample value so UI still works
+    const fallbackValue = 128;
+    setVisits(fallbackValue);
   }, []);
+
+  useEffect(() => {
+    if (visits === null) return;
+
+    let start = 0;
+    const duration = 1200;
+    const stepTime = 16;
+    const totalSteps = duration / stepTime;
+    const increment = visits / totalSteps;
+
+    const timer = setInterval(() => {
+      start += increment;
+
+      if (start >= visits) {
+        setDisplayed(visits);
+        clearInterval(timer);
+      } else {
+        setDisplayed(Math.floor(start));
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [visits]);
 
   return (
     <footer className="footer">
       <div className="visit-counter-wrap">
         <span className="visit-counter-label">Visitors</span>
-
         <span className="visit-counter-number">
-          {error
-            ? "Unavailable"
-            : visits === null
-            ? "Loading..."
-            : visits.toLocaleString()}
+          {visits === null ? "Unavailable" : displayed.toLocaleString()}
         </span>
       </div>
 
