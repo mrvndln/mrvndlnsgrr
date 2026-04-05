@@ -194,7 +194,9 @@ export const portfolioData = {
         "Memos Management - Create and distribute internal communications"
       ],
 
-      images: [],
+      images: [
+        "images/projects/hrims/hrims.png",
+      ],
 
       links: {
         demo: null,
@@ -220,7 +222,9 @@ export const portfolioData = {
         "Reporting - Generate insights on support performance and trends"
       ],
 
-      images: [],
+      images: [
+        "images/projects/ticketing/ticketing.png",
+      ],
 
       links: {
         demo: null,
@@ -277,7 +281,9 @@ export const portfolioData = {
         "Email Integration - Send and manage communications within the system",
       ],
 
-      images: [],
+      images: [
+        "images/projects/crm/crm.png",
+      ],
 
       links: {
         demo: null,
