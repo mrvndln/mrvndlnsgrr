@@ -1111,17 +1111,6 @@ body.dark .visit-counter-label {
   color: #9ca3af;
 }
 
-.visit-counter-number {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  transition: transform 0.2s ease;
-}
-
-.visit-counter-wrap:hover .visit-counter-number {
-  transform: scale(1.05);
-}
-
 /* bounce animation */
 @keyframes skillBounce {
   0% {
