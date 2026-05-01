@@ -515,6 +515,10 @@ button {
   font-weight: 400;
 }
 
+body.dark .skills-card-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .skills-card .skills-marquee {
   display: flex;
   flex-wrap: wrap;
