@@ -322,34 +322,67 @@ export const portfolioData = {
       featured: false,
     },
   ],
-  skills: [
-    "Laravel",
-    "Livewire",
-    "Repository Pattern",
-    "PHP",
-    "C#",
-    "ASP.NET",
-    "JavaScript",
-    "Alpine.js",
-    "jQuery",
-    "Vue.Js",
-    "ReactJS",
-    "Blazor",
-    "Tailwind CSS",
-    "Bootstrap",
-    "MySQL",
-    "PostgreSQL",
-    "REST API",
-    "Git",
-    "GitHub",
-    "Bitbucket",
-    "AWS EC2",
-    "AWS RDS",
-    "AWS S3",
-    "VS Code",
-    "Postman",
-    "RESTful API development",
-    "API integration",
-    "Hardware Integration"
-  ],
+  skills: {
+    backend: ["Laravel", "Livewire", "PHP", "C#", "ASP.NET"],
+
+    frontend: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Alpine.js",
+      "Vue.js",
+      "React",
+      "Blazor",
+      "jQuery",
+    ],
+
+    database: ["MySQL", "PostgreSQL", "Supabase"],
+
+    devops: ["AWS EC2", "AWS RDS", "AWS S3",  "CI/CD", "Deployment Automation"],
+
+    tools: ["Git", "GitHub", "Bitbucket", "VS Code", "Postman"],
+
+    architecture: [
+      "MVC Architecture",
+      "Layered Architecture",
+      "Repository Pattern",
+      "API Integration",
+      "Hardware Integration",
+    ],
+  },
+};
+
+export const skillsMeta = {
+  backend: {
+    title: "Backend",
+    desc: "Server-side technologies and frameworks",
+    icon: "backend",
+  },
+  frontend: {
+    title: "Frontend",
+    desc: "Building interactive and responsive user interfaces",
+    icon: "frontend",
+  },
+  database: {
+    title: "Database",
+    desc: "Relational database management systems",
+    icon: "database",
+  },
+  devops: {
+    title: "Cloud & DevOps",
+    desc: "Cloud services and infrastructure",
+    icon: "devops",
+  },
+  tools: {
+    title: "Tools & Version Control",
+    desc: "Development tools and collaboration",
+    icon: "tools",
+  },
+  architecture: {
+    title: "Architecture & Integration",
+    desc: "Application structure and system integration",
+    icon: "architecture",
+  },
 };
